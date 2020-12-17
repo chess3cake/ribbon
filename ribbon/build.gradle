@@ -1,6 +1,7 @@
-apply plugin: 'nebula-test-jar'
-apply plugin: 'nebula-facet'
-
+plugins {
+    id "nebula.test-jar"
+    id "nebula.facet"
+}
 facets {
     examples {
         parentSourceSet = 'main'

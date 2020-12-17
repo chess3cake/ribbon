@@ -1,3 +1,20 @@
+pluginManagement {
+
+    plugins {
+        id "nebula.netflixoss" version "8.8.1"
+        id "nebula.test-jar" version "17.3.2"
+        id "nebula.facet" version "7.0.7"
+    }
+
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin/'
+        }
+        gradlePluginPortal()
+    }
+}
+
+
 rootProject.name='ribbon'
 include 'ribbon-core'
 include 'ribbon-archaius'

@@ -1,5 +1,5 @@
 plugins {
-    id 'nebula.netflixoss' version '2.2.10'
+    id "nebula.netflixoss"
 }
 
 // Establish version and status
@@ -15,17 +15,10 @@ subprojects {
     group = "com.netflix.${githubProjectName}" // TEMPLATE: Set to organization of project
 
     repositories {
-        jcenter()
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin/'
+        }
     }
 
-    if (project.hasProperty('useMavenLocal')) {
-        repositories {
-            mavenLocal()
-        }
-    }
-    if (project.getProperty('status').equals("snapshot")) {
-        repositories {
-            maven { url 'http://oss.jfrog.org/oss-snapshot-local' }
-        }
-    }
 }
